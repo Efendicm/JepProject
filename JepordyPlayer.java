@@ -123,26 +123,83 @@ public class JepordyPlayer extends JFrame {
          		W100.setEnabled(false);
          		
          	}
-         	else if (buttonName.equals("W300")) {
-         		World1();
-         		W100.setEnabled(false);
+
+            else if (buttonName.equals("W200")) {
+         	    World2();
+         		W200.setEnabled(false);
+
+            }
+            
+            else if (buttonName.equals("W300")) {
+         		World3();
+         		W300.setEnabled(false);
          		
          	}
          	else if (buttonName.equals("W400")) {
-         		World1();
-         		W100.setEnabled(false);
-         		
-         	}
-         	else if (buttonName.equals("W400")) {
-         		People1();
-         		//P100.setEnabled(false);
+         		World4();
+         		W400.setEnabled(false);
          		
          	}
          	else if (buttonName.equals("P100")) {
          		People1();
-         		//P100.setEnabled(false);
+         		P100.setEnabled(false);
          		
          	}
+         	else if (buttonName.equals("P200")) {
+         		People2();
+         		P200.setEnabled(false);
+         		
+         	}
+            else if (buttonName.equals("P300")) {
+         		People3();
+         		P300.setEnabled(false);
+         		
+         	}
+         	else if (buttonName.equals("P400")) {
+         		People4();
+         		P400.setEnabled(false);
+         		
+         	} 
+            else if (buttonName.equals("p100")) {
+         		Planets1();
+         		p100.setEnabled(false);
+         		
+         	}
+         	else if (buttonName.equals("p200")) {
+         		Planets2();
+         		p200.setEnabled(false);
+         		
+         	}
+            else if (buttonName.equals("p300")) {
+         		Planets3();
+         		p300.setEnabled(false);
+         		
+         	}
+         	else if (buttonName.equals("p400")) {
+         		Planets4();
+         		p400.setEnabled(false);
+         		
+         	}
+            else if (buttonName.equals("A100")) {
+         		Animals1();
+         		A100.setEnabled(false);
+         		
+         	}
+         	else if (buttonName.equals("A200")) {
+         		Animals2();
+         		A200.setEnabled(false);
+         		
+         	}
+            else if (buttonName.equals("A300")) {
+         		Animals3();
+         		A300.setEnabled(false);
+         		
+         	}
+         	else if (buttonName.equals("A400")) {
+         		Animals4();
+         		A400.setEnabled(false);
+         		
+         	}   
 		}
     }
     int Master;
@@ -169,7 +226,7 @@ public class JepordyPlayer extends JFrame {
     }
     private static void World1() {
     	//string for Questions
-    	final String[] World1 = {"World War I began in which year?","What city was the first capital of the United States?", "Who is Elon Musk?","How Many States are in the united States?"};
+    	final String[] World1 = {"EasyWQ1","EasyWQ2", "EasyWQ3","EasyWQ4"};
     	Random random = new Random();
     	final int index = random.nextInt(World1.length);
     	JOptionPane.showMessageDialog(null,World1[index]);
@@ -177,15 +234,15 @@ public class JepordyPlayer extends JFrame {
     }
     private static void World2() {
     	//string for Questions
-    	final String[] World1 = {"World War I began in which year?","What city was the first capital of the United States?", "Who is Elon Musk?","How Many States are in the united States?"};
+    	final String[] World2 = {"MediumWQ1","MediumWQ2", "MediumWQ3","MediumWQ4"};
     	Random random = new Random();
-    	final int index = random.nextInt(World1.length);
-    	JOptionPane.showMessageDialog(null,World1[index]);
+    	final int index = random.nextInt(World2.length);
+    	JOptionPane.showMessageDialog(null,World2[index]);
     	
     }
     private static void World3() {
     	//string for Questions
-    	final String[] World1 = {"World War I began in which year?","What city was the first capital of the United States?", "Who is Elon Musk?","How Many States are in the united States?"};
+    	final String[] World1 = {"HardWQ1","HardWQ2", "HardWQ3","HardWQ4"};
     	Random random = new Random();
     	final int index = random.nextInt(World1.length);
     	JOptionPane.showMessageDialog(null,World1[index]);
@@ -193,7 +250,7 @@ public class JepordyPlayer extends JFrame {
     }
     private static void World4() {
     	//string for Questions
-    	final String[] World1 = {"World War I began in which year?","What city was the first capital of the United States?", "Who is Elon Musk?","How Many States are in the united States?"};
+    	final String[] World1 = {"ExpertWQ1","ExpertWQ2", "ExpertWQ3","ExpertWQ4"};
     	Random random = new Random();
     	final int index = random.nextInt(World1.length);
     	JOptionPane.showMessageDialog(null,World1[index]);
@@ -201,10 +258,98 @@ public class JepordyPlayer extends JFrame {
     }
     private static void People1() {
     	//string for Questions
-    	final String[] People1 = {"Who is George Washington?","Who made FaceBook?", "Who is Elon Musk?","Who is Martin Luther King jr.?"};
+    	final String[] People1 = {"EasyPQ1","EasyPQ2", "EasyPQ3","EasyPQ4"};
     	Random random = new Random();
     	final int index = random.nextInt(People1.length);
     	JOptionPane.showMessageDialog(null,People1[index]);
+    	
+    }
+    private static void People2() {
+    	//string for Questions
+    	final String[] People2 = {"MediumPQ1","MediumPQ2", "MediumPQ3","MediumPQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(People2.length);
+    	JOptionPane.showMessageDialog(null,People2[index]);
+    	
+    }
+    private static void People3() {
+    	//string for Questions
+    	final String[] People3 = {"HardPQ1","HardPQ2", "HardPQ3","HardPQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(People3.length);
+    	JOptionPane.showMessageDialog(null,People3[index]);
+    	
+    }
+    private static void People4() {
+    	//string for Questions
+    	final String[] People4 = {"ExpertPQ1","ExpertPQ2", "ExpertPQ3","ExpertPQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(People4.length);
+    	JOptionPane.showMessageDialog(null,People4[index]);
+    	
+    }
+    private static void Planets1() {
+    	//string for Questions
+    	final String[] Planets1 = {"EasypQ1","EasypQ2", "EasypQ3","EasypQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Planets1.length);
+    	JOptionPane.showMessageDialog(null,Planets1[index]);
+    	
+    }
+    private static void Planets2() {
+    	//string for Questions
+    	final String[] Planets2 = {"MediumpQ1","MediumpQ2", "MediumpQ3","MediumpQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Planets2.length);
+    	JOptionPane.showMessageDialog(null,Planets2[index]);
+    	
+    }
+    private static void Planets3() {
+    	//string for Questions
+    	final String[] Planets3 = {"HardpQ1","HardpQ2", "HardpQ3","HardpQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Planets3.length);
+    	JOptionPane.showMessageDialog(null,Planets3[index]);
+    	
+    }
+    private static void Planets4() {
+    	//string for Questions
+    	final String[] Planets4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Planets4.length);
+    	JOptionPane.showMessageDialog(null,Planets4[index]);
+    	
+    }
+    private static void Animals1() {
+    	//string for Questions
+    	final String[] Animals1 = {"EasyAQ1","EasyAQ2", "EasyAQ3","EasyAQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Animals1.length);
+    	JOptionPane.showMessageDialog(null,Animals1[index]);
+    	
+    }
+    private static void Animals2() {
+    	//string for Questions
+    	final String[] Animals2 = {"MediumAQ1","MediumAQ2", "MediumAQ3","MediumAQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Animals2.length);
+    	JOptionPane.showMessageDialog(null,Animals2[index]);
+    	
+    }
+    private static void Animals3() {
+    	//string for Questions
+    	final String[] Animals3 = {"HardAQ1","HardAQ2", "HardAQ3","HardAQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Animals3.length);
+    	JOptionPane.showMessageDialog(null,Animals3[index]);
+    	
+    }
+    private static void Animals4() {
+    	//string for Questions
+    	final String[] Animals4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
+    	Random random = new Random();
+    	final int index = random.nextInt(Animals4.length);
+    	JOptionPane.showMessageDialog(null,Animals4[index]);
     	
     }
 
@@ -245,7 +390,7 @@ public class JepordyPlayer extends JFrame {
         P300 = new JButton("P300");
         P400 = new JButton("P400");
         p100 = new JButton("p100");
-        p200 = new JButton("200");
+        p200 = new JButton("p200");
         p300 = new JButton("p300");
         p400 = new JButton("p400");
         A100 = new JButton("A100");
