@@ -49,10 +49,14 @@ public class JepordyPlayer extends JFrame {
         Player.setLayout(Intro);
         JPanel Quiz = new JPanel();
         Quiz.setLayout(Intro);
-         
+        
       //New button
         button1 = new JButton("Quiz Master"); //New button 1
+        button1.setBackground(Color.RED);
+        button1.setForeground(Color.WHITE);
         button2 = new JButton("Player");
+        button2.setBackground(Color.BLUE);
+        button2.setForeground(Color.WHITE);
         SimpleListener ourListener = new SimpleListener();
         //Create an action listener for two buttons to share
          button1.addActionListener(ourListener);
@@ -68,6 +72,7 @@ public class JepordyPlayer extends JFrame {
 
         panel1.add(new JLabel(spaces + "Please Pick a player The Qiuz Master Or Answer The Question!" + spaces));  
         panel1.setBorder(blackline);
+
 
         Intro.add(panel1);
         //Rules
@@ -96,6 +101,10 @@ public class JepordyPlayer extends JFrame {
         pane.add(Player, BorderLayout.CENTER);
         pane.add(Rules, BorderLayout.SOUTH);
         pane.add(Quiz, BorderLayout.EAST);
+
+        //setLayout(new BorderLayout());
+		//setContentPane(new JLabel(new ImageIcon("Jeopardy.jpg")));
+		//setLayout(new FlowLayout());
     }
     
      
@@ -363,6 +372,7 @@ public class JepordyPlayer extends JFrame {
         //Display the window.
         frame.pack();
         frame.setVisible(true);
+        
     }
      
     public static void main(String[] args) {
@@ -377,10 +387,10 @@ public class JepordyPlayer extends JFrame {
     }
     private void Player() {
     	//Buttons
-    	 World = new JButton("World");
-    	 People = new JButton("People");
-    	 Planets = new JButton("Planets");
-    	 Animals = new JButton("Animals");
+    	World = new JButton("World");
+    	People = new JButton("People");
+    	Planets = new JButton("Planets");
+    	Animals = new JButton("Animals");
         W100 = new JButton("W100");
         W200 = new JButton("W200");
         W300 = new JButton("W300");
@@ -489,7 +499,7 @@ public class JepordyPlayer extends JFrame {
         //Master.add(People);
         //Master.add(Planets);
         //Master.add(Animals);
-        JFrame quiz = new JFrame("Player" );
+        JFrame quiz = new JFrame("QuizMaster" );
         quiz.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Set up the content pane.
         //frame.addComponentsToPane(frame.getContentPane());
