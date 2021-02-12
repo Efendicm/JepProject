@@ -489,7 +489,7 @@ public class JepordyPlayer extends JFrame {
         //Master.add(People);
         //Master.add(Planets);
         //Master.add(Animals);
-        JFrame quiz = new JFrame("QuizMaster" );
+        JFrame quiz = new JFrame("Player" );
         quiz.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Set up the content pane.
         //frame.addComponentsToPane(frame.getContentPane());
