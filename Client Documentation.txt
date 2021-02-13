@@ -1,0 +1,38 @@
+JEOPARDY CLIENT INTERFACE DOC---
+once you make an instance of JepClient, you must make a new Thread and set it as the Thread's target:
+    JepClient network=new JepClient();
+    Thread netWorker=new Thread(network);
+Then you can start the thread to do... something. I haven't made up my mind yet:
+            netWorker.start();
+Alternatively, you can simply call the following methods directly from an instance of JepClient:
+    
+    boolean setIpAddress(String address);
+        -changes the server's ip address to any given String.
+        -automatically determines if the address String is valid or not.
+        -returns true if the address is changed successfully, false otherwise.
+
+    boolean setName(String name);
+        -sets the name of the current player to name.
+        -returns true if successful, or false if name is blank, only spaces, or null.
+
+    boolean joinGame();
+        -attempts to join the game given the currently set server ip address.
+        -if successful, the internal playerNumber is set to a value from 0-2,
+        and returns true. Returns false otherwise, and playerNumber remains the initial value of -1.
+        -only lets a given ip address connect to the server once (so no duplicate players).
+
+    int[] getScores();
+        -returns an int[3] containing the current scores of the game's players.
+        -the score of any given player is located at getScores()[playerNumber-1].
+        -for finding the names of the players, see getNames();
+
+    String[] getNames();
+        -returns a String[3] containing the current names of the game's players.
+        -the name of any given player is located at getNames()[playerNumber-1].
+        -for finding the scores of the players, see getScores();
+
+    String[][] getBoard();
+        -a connection-expensive way of getting the question board to be used for a new game.
+        -returns a String[][] containing the next question board.
+        -getBoard()[0][] contains Strings of the categories, while every other element is a question.
+        -should only be called at the start of new games.

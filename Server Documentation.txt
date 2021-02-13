@@ -1,0 +1,31 @@
+JEOPARDY SERVER INTERFACE DOC---
+once you make an instance of JepServer, you must make a new Thread and set it as the Thread's target:
+    JepServer server=new JepServer();
+    Thread netWorker=new Thread(server);
+Then you can start the thread to do enable connections to the server:
+            netWorker.start();
+Alternatively, you can simply call the following methods directly from an instance of JepClient:
+    
+    String getIpAddress();
+        -returns the ip address of the current machine.
+        -does not actually need to be connected to the internet to work.
+        -returns "err" if there is an error somehow (there shouldn't be).
+
+    void setScore(int player,int score);
+        -sets the score of player# player to score.
+
+    void setScores(int[] scores);
+        -sets all the players scores to the corresponding values in scores[].
+        -scores should contain three elements; fewer will result in the value of the excluded players
+        remaining constant, more will result in only the first three values being used.
+
+    String[] getNames();
+        -returns a String[3] containing the current names of the game's players.
+        -the name of any given player is located at getNames()[playerNumber-1].
+        -for finding the scores of the players, see getScores();
+
+    int[] getScores();
+        -returns an int[3] containing the current scores of the game's players.
+        -the score of any given player is located at getScores()[playerNumber-1].
+        -for finding the names of the players, see getNames();
+

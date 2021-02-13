@@ -69,6 +69,6 @@ public class Sound {
         return (int)(clip.getFrameLength()/(clip.getMicrosecondLength()/1000000));
     }
     public void setSecondPosition(int pos){
-        clip.setFramePosition(pos*clip.getSampleRate());
+        clip.setFramePosition(pos*this.getSampleRate());
     }
 }
