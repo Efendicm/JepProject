@@ -2,9 +2,10 @@ JEOPARDY CLIENT INTERFACE DOC---
 once you make an instance of JepClient, you must make a new Thread and set it as the Thread's target:
     JepClient network=new JepClient();
     Thread netWorker=new Thread(network);
-Then you can start the thread to do... something. I haven't made up my mind yet:
+Then you can start the thread to do begin periodic communication with the server:
             netWorker.start();
-Alternatively, you can simply call the following methods directly from an instance of JepClient:
+This updates various things periodically, like player names and scores.
+Additionally, you can simply call the following methods directly from an instance of JepClient:
     
     boolean setIpAddress(String address);
         -changes the server's ip address to any given String.
@@ -14,6 +15,7 @@ Alternatively, you can simply call the following methods directly from an instan
     boolean setName(String name);
         -sets the name of the current player to name.
         -returns true if successful, or false if name is blank, only spaces, or null.
+        -syncs with the server to update the new name for all players
 
     boolean joinGame();
         -attempts to join the game given the currently set server ip address.
@@ -36,3 +38,12 @@ Alternatively, you can simply call the following methods directly from an instan
         -returns a String[][] containing the next question board.
         -getBoard()[0][] contains Strings of the categories, while every other element is a question.
         -should only be called at the start of new games.
+
+*Important note: you must call setIpAddress() successfully in order call any of the other methods.
+Otherwise, bad things will happen (none of them will crash, but the might return some null values).
+
+**Importanter note: clients are not allowed to update their scores, only the server is able to.
+They can change their names at will, however.
+
+***Importantest note: The server is set up to only allow one client per ip address, meaning I can't actually
+debug the methods that require three players. Stupid, I know, but there's no quick workaround for it.

@@ -1,3 +1,4 @@
+package network;
 /*
     this is just meant to be used for network implementation
     DON'T create any of these in the actual interfaces
@@ -19,7 +20,7 @@ public class NetPlayer{
     public NetPlayer(){
         ipAddress="null";
         score=0;
-        name="null";
+        name="";
         number=-1;
     }
 

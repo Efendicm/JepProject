@@ -2,9 +2,9 @@ JEOPARDY SERVER INTERFACE DOC---
 once you make an instance of JepServer, you must make a new Thread and set it as the Thread's target:
     JepServer server=new JepServer();
     Thread netWorker=new Thread(server);
-Then you can start the thread to do enable connections to the server:
+Then you can start the thread to do enable clients to connect to the server:
             netWorker.start();
-Alternatively, you can simply call the following methods directly from an instance of JepClient:
+Additionally, you can simply call the following methods directly from an instance of JepClient:
     
     String getIpAddress();
         -returns the ip address of the current machine.
@@ -29,3 +29,9 @@ Alternatively, you can simply call the following methods directly from an instan
         -the score of any given player is located at getScores()[playerNumber-1].
         -for finding the names of the players, see getNames();
 
+*I tried to make the server as idiot-proof as possible; hopefully, nothing can crash it.
+No promises.
+
+**Always make a thread for the server, even if you use the thread-less methods. 
+Making a dedicated thread is how the server is able to respond to every incoming connection.
+On that note, hopefully nobody ever tries to DDoS this game.
