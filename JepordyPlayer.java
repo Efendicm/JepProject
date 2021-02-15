@@ -84,8 +84,7 @@ public class JepordyPlayer extends JFrame {
         JPanel explain = new JPanel();
         String space = "                   ";
 
-        explain.add(new JLabel(space + "Welcome To Jepordy This is a 4 player game with one being the Quiz Master and 3 being the Player!"
-        		+ "  You will have to compete trying to answer questions and the winner is demetmined at the end when the time runs out and who has more points" + space));  
+        explain.add(new JLabel("<html><i>Welcome To Jepordy This is a 4 player game with one being the Quiz Master and 3 being the Player! <br> You will have to compete trying to answer questions and the winner is demetmined at the end when the time runs out and who has more points.</i><html>"));  
         explain.setBorder(Rule);
         Player.add(explain);
         //Action listner to buttons
@@ -388,25 +387,61 @@ public class JepordyPlayer extends JFrame {
     private void Player() {
     	//Buttons
     	World = new JButton("World");
+        World.setBackground(Color.WHITE);
     	People = new JButton("People");
+        People.setBackground(Color.WHITE);
     	Planets = new JButton("Planets");
+        Planets.setBackground(Color.WHITE);
     	Animals = new JButton("Animals");
+        Animals.setBackground(Color.WHITE);
         W100 = new JButton("W100");
+        W100.setBackground(Color.GREEN);
+        W100.setForeground(Color.BLACK);
         W200 = new JButton("W200");
+        W200.setBackground(Color.YELLOW);
+        W200.setForeground(Color.BLACK);
         W300 = new JButton("W300");
+        W300.setBackground(Color.ORANGE);
+        W300.setForeground(Color.BLACK);
         W400 = new JButton("W400");
+        W400.setBackground(Color.RED);
+        W400.setForeground(Color.WHITE);
         P100 = new JButton("P100");
+        P100.setBackground(Color.GREEN);
+        P100.setForeground(Color.BLACK);
         P200 = new JButton("P200");
+        P200.setBackground(Color.YELLOW);
+        P200.setForeground(Color.BLACK);
         P300 = new JButton("P300");
+        P300.setBackground(Color.ORANGE);
+        P300.setForeground(Color.BLACK);
         P400 = new JButton("P400");
+        P400.setBackground(Color.RED);
+        P400.setForeground(Color.WHITE);
         p100 = new JButton("p100");
+        p100.setBackground(Color.GREEN);
+        p100.setForeground(Color.BLACK);
         p200 = new JButton("p200");
+        p200.setBackground(Color.YELLOW);
+        p200.setForeground(Color.BLACK);
         p300 = new JButton("p300");
+        p300.setBackground(Color.ORANGE);
+        p300.setForeground(Color.BLACK);
         p400 = new JButton("p400");
+        p400.setBackground(Color.RED);
+        p400.setForeground(Color.WHITE);
         A100 = new JButton("A100");
+        A100.setBackground(Color.GREEN);
+        A100.setForeground(Color.BLACK);
         A200 = new JButton("A200");
+        A200.setBackground(Color.YELLOW);
+        A200.setForeground(Color.BLACK);
         A300 = new JButton("A300");
+        A300.setBackground(Color.ORANGE);
+        A300.setForeground(Color.BLACK);
         A400 = new JButton("A400");
+        A400.setBackground(Color.RED);
+        A400.setForeground(Color.WHITE);
         //Action Listener For buttons
         SimpleListener Cat = new SimpleListener();
         SimpleListener Cat1 = new SimpleListener();
@@ -521,7 +556,11 @@ public class JepordyPlayer extends JFrame {
         B.setLayout(g);
         //Button
         Right = new JButton("Right");
+        Right.setBackground(Color.BLUE);
+        Right.setForeground(Color.WHITE);
         Wrong = new JButton("Wrong");
+        Wrong.setBackground(Color.RED);
+        Wrong.setForeground(Color.WHITE);
         //Button on JPanel
         B.add(Right);
         B.add(Wrong);
@@ -557,4 +596,3 @@ public class JepordyPlayer extends JFrame {
        // }
    // }
 }
-
