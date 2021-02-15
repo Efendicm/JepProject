@@ -2,7 +2,7 @@ package network;
 /*
     Server-side network implementation for Network Jeopardy
     Written by Derek Rodriguez
-    last commit: 2/12/21
+    last commit: 2/14/21
 */
 import java.io.*;
 import java.net.*;
@@ -10,12 +10,19 @@ import java.util.StringTokenizer;
 
 public class JepServer implements Runnable{
     private final static boolean debug=true;
+    private final static int ROWS=4;//question categories
+    private final static int COLUMNS=5;//questions per category, plus one (for category label)
+    private final static int PLAYERS=3;//the total number of players. I know we're only using three. Stray constants are big stinky
     private ServerSocket ss;
     private Socket s;
     private NetPlayer[] players;
+    private String[][] board;
+    private int[] buzz;//[row,column] of buzzed question (y,x)
 
     public JepServer(){
-        players=new NetPlayer[3];
+        players=new NetPlayer[PLAYERS];
+        board=new String[ROWS][COLUMNS];
+        buzz=new int[]{-1,-1};//this is the way im checking if a buzz happens... since -1 question coordinate
     }
 
     public synchronized void run(){
@@ -24,7 +31,7 @@ public class JepServer implements Runnable{
             while(true){
                 if(debug)System.out.println("waiting for connection:");
                 s=ss.accept();
-                Thread clientThread=new handleRequest(s);
+                Thread clientThread=new HandleRequest(s);
                 clientThread.start();
             }
         }catch(Exception e){
@@ -42,8 +49,16 @@ public class JepServer implements Runnable{
         }
         return out;
     }
+    public void setBoard(String[][] board){
+        if(board.length==ROWS&&board[0].length==COLUMNS){
+            this.board=board;
+            if(debug)System.out.println("board changed to:"+board.toString());
+        }else{
+            if(debug)System.out.println("err:wrongboarddimensions:"+board.length+"x"+board[0].length+" != "+ROWS+"x"+COLUMNS);
+        }
+    }
     public void setScore(int player,int score){
-        if(players[2]==null){//players[2] should always be initialized last, so we don't need to make sure the other two exist
+        if(!gameFull()){
             if(debug)System.out.println("err:gamenotfull");
             return;
         }
@@ -56,11 +71,11 @@ public class JepServer implements Runnable{
         }
     }
     public void setScores(int[] scores){
-        if(players[2]==null){//players[2] should always be initialized last, so we don't need to make sure the other two exist
+        if(!gameFull()){
             if(debug)System.out.println("err:gamenotfull");
             return;
         }
-        for(int i=0;i<3;i++){
+        for(int i=0;i<PLAYERS;i++){
             for(NetPlayer p:players){
                 if(p.getNumber()==i){
                     p.setScore(scores[i]);
@@ -70,9 +85,9 @@ public class JepServer implements Runnable{
             }
         }
     }
-    public String[] getNames(){//this is probably the slowest possible way to do this, but theres only every three players, so we good
-        String[] out=new String[3];
-        for(int i=0;i<3;i++){
+    public String[] getNames(){//this is probably the slowest possible way to do this, but there are only three players, so we good
+        String[] out=new String[PLAYERS];
+        for(int i=0;i<PLAYERS;i++){
             for(NetPlayer p:players){
                 if(p.getNumber()==i){
                     out[i]=p.getName();
@@ -83,8 +98,8 @@ public class JepServer implements Runnable{
         return out;
     }
     public int[] getScores(){//bogosort, am I right???
-        int[] out=new int[3];
-        for(int i=0;i<3;i++){
+        int[] out=new int[PLAYERS];
+        for(int i=0;i<PLAYERS;i++){
             for(NetPlayer p:players){
                 if(p.getNumber()==i){
                     out[i]=p.getScore();
@@ -94,10 +109,34 @@ public class JepServer implements Runnable{
         }
         return out;
     }
+    public void kickPlayer(int playerNumber){
+        for(int i=0;i<PLAYERS;i++){
+            if(players[i].getNumber()==playerNumber){
+                if(debug)System.out.println(players[i].getIpAddress()+" kicked");
+                players[i]=null;
+            }
+        }
+    }
+    public boolean gameFull(){
+        boolean out=true;
+        for(NetPlayer p:players){
+            if(p==null)out=false;
+        }
+        return out;
+    }
+    public boolean checkBuzzes(){
+        if(buzz[0]==-1)return false;
+        return true;
+    }
+    public int[] getBuzz(){
+        int[] temp=buzz;
+        buzz=new int[]{-1,-1};
+        return temp;
+    }
 
-    private class handleRequest extends Thread{
+    private class HandleRequest extends Thread{
         Socket s;
-        public handleRequest(Socket s){
+        public HandleRequest(Socket s){
             this.s=s;
         }
         public void run(){
@@ -119,7 +158,9 @@ public class JepServer implements Runnable{
                     case "changename":out.write(changeName(connection,args.nextToken()));break;
                     case "getscores":out.write(getScores());break;
                     case "getnames":out.write(getNames());break;
-                    case "getboard":break;//TODO: god i dont wanna figure this out right now
+                    case "quitgame":out.write(quitGame(connection));break;
+                    case "buzz":out.write(setBuzz(args.nextToken(),args.nextToken()));break;
+                    case "getboard":out.write(getBoard(args.nextToken(),args.nextToken()));break;
                     default:out.write("err:unknowncmd");if(debug)System.out.println("error:unknown command:"+received);break;
                 }
 
@@ -130,11 +171,54 @@ public class JepServer implements Runnable{
             }
         }
 
-
+        private String setBuzz(String y,String x){
+            String out="err:outofbounds";
+            try{
+                int row=Integer.parseInt(y);
+                int col=Integer.parseInt(x);
+                out=board[row][col];//if y,x is out of bounds, board[row][col] will not exist and the catch will be thrown
+                buzz=new int[]{row,col};
+                if(debug)System.out.println("buzz set to:"+row+":"+col);
+                out="goodluck";//the only reason i made out=board[whatever] earlier was because java gets pissy about just declaring a value without assigning it to something
+            }catch(Exception e){
+                if(debug)System.out.println("setbuzz:err:outofbounds:"+y+":"+x);
+            }
+            if(debug)System.out.println("sent:"+out);
+            return out;
+        }
+        private String getBoard(String y,String x){
+            String out="err:outofbounds";
+            if(y.equals("rows")){
+                out=board.length+"";
+            }else if(y.equals("cols")){
+                out=board[0].length+"";
+            }else{
+                try{
+                    int row=Integer.parseInt(y);
+                    int col=Integer.parseInt(x);
+                    out=board[row][col];
+                }catch(Exception e){
+                    if(debug)System.out.println("getboard:err:outofbounds:"+y+":"+x);
+                }
+            }
+            if(debug)System.out.println("sent:"+out);
+            return out;
+        }
+        private String quitGame(String address){
+            for(NetPlayer p:players){
+                if(p.getIpAddress().equals(address)){
+                    if(debug)System.out.println(address+" quitting");
+                    p=null;
+                    return "solonggaybowser";
+                }
+            }
+            if(debug)System.out.println("err:unknownip:"+address);
+            return "err:nosuchplayer";
+        }
         private String joinGame(String ip){
             String out="-1";
             if(ValidateIPv4.isValidInet4Address(ip)){
-                for(int i=0;i<3;i++){
+                for(int i=0;i<PLAYERS;i++){
                     if(players[i]!=null&&ip.equals(players[i].getIpAddress()))break;
                     if(players[i]==null){
                         players[i]=new NetPlayer(ip,0,"",i);

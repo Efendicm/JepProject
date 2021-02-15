@@ -2,7 +2,7 @@ package network;
 /*
     Client-side network implementation for Network Jeopardy
     Written by Derek Rodriguez
-    last commit: 2/12/21
+    last commit: 2/14/21
 */
 import java.io.*;
 import java.net.*;
@@ -52,6 +52,10 @@ public class JepClient implements Runnable{
             out=true;
         }
         return out;
+    }
+    public boolean quitGame(){
+        if(sendReceive("quitgame").equals("solonggaybowser"))return true;
+        return false;
     }
     public int[] getScores(){
         int[] out=new int[3];
@@ -103,9 +107,20 @@ public class JepClient implements Runnable{
             return false;
         }
     }
-    public String[][] getBoard(){//TODO:this
-        String[][] out=new String[10][10];
-        return out;
+    public boolean attemptQuestion(int x,int y){//category,difficulty -- 0 difficulty is just the category name
+        if(sendReceive("buzz:"+y+":"+x).equals("goodluck"))return true;
+        return false;
+    }
+    public String[][] getBoard(){
+        int rows=Integer.parseInt(sendReceive("getboard:rows:"));//height//     since the board is never stored locally in the client,
+        int columns=Integer.parseInt(sendReceive("getboard:cols:"));//width//   it must get the dimensions from the server as well as the questions
+        String[][] board=new String[rows][columns];
+        for(int y=0;y<rows;y++){
+            for(int x=0;x<columns;x++){
+                board[y][x]=sendReceive("getboard:"+y+":"+x);//y,x -- NOT x,y -- always opposite of what you think
+            }
+        }
+        return board;
     }
 
     private String getIpAddress(){//based on code found at https://stackoverflow.com/questions/9481865/getting-the-ip-address-of-the-current-machine-using-java

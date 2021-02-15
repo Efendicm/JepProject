@@ -17,6 +17,17 @@ Additionally, you can simply call the following methods directly from an instanc
         -returns true if successful, or false if name is blank, only spaces, or null.
         -syncs with the server to update the new name for all players
 
+    boolean attemptQuestion(int row, int column);
+        -tells the server (and therefore quizmaster) which question is being attempted by a player.
+        -returns true if received and false otherwise.
+        -in order to find out if the verbal answer is correct, the player's code must periodically check for changes in scores using getScores();
+        -ideally, JepClient should not be responsible for determining if a question has already been attempted since that check can be performed by the GUI's ActionListener.
+
+    boolean quitGame();
+        -tells the server to leave the current game.
+        -should really only be called before the game actually starts, since new players should not be allowed to join mid-game.
+        -returns true if the server got the request, false otherwise
+
     boolean joinGame();
         -attempts to join the game given the currently set server ip address.
         -if successful, the internal playerNumber is set to a value from 0-2,
@@ -34,16 +45,17 @@ Additionally, you can simply call the following methods directly from an instanc
         -for finding the scores of the players, see getScores();
 
     String[][] getBoard();
-        -a connection-expensive way of getting the question board to be used for a new game.
+        -a network-expensive way of getting the question board to be used for a new game.
         -returns a String[][] containing the next question board.
         -getBoard()[0][] contains Strings of the categories, while every other element is a question.
         -should only be called at the start of new games.
 
 *Important note: you must call setIpAddress() successfully in order call any of the other methods.
-Otherwise, bad things will happen (none of them will crash, but the might return some null values).
+Otherwise, bad things will happen (none of them will crash, but they might return some null values).
 
 **Importanter note: clients are not allowed to update their scores, only the server is able to.
-They can change their names at will, however.
+They can change their names at will, however. This is to prevent high-level hacks from cheaters looking to make millions of points.
+Probably not likely, but it's good form.
 
 ***Importantest note: The server is set up to only allow one client per ip address, meaning I can't actually
 debug the methods that require three players. Stupid, I know, but there's no quick workaround for it.
