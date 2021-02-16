@@ -14,10 +14,10 @@ public class JepordyPlayer extends JFrame {
 	//private static JComboBox Planets;
 	//private static JComboBox Animals;
     private static JFrame frame; //Define static variables for main to use
-   private JButton World;
-   private JButton People;
-   private JButton Planets;
-   private JButton Animals;
+    private JButton World;
+    private JButton People;
+    private JButton Planets;
+    private JButton Animals;
     private JButton A100;
     private JButton A200;
     private JButton A300;
@@ -556,7 +556,7 @@ public class JepordyPlayer extends JFrame {
         B.setLayout(g);
         //Button
         Right = new JButton("Right");
-        Right.setBackground(Color.BLUE);
+        Right.setBackground(Color.GREEN);
         Right.setForeground(Color.WHITE);
         Wrong = new JButton("Wrong");
         Wrong.setBackground(Color.RED);
