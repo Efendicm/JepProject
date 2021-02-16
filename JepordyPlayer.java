@@ -52,10 +52,10 @@ public class JepordyPlayer extends JFrame {
         
       //New button
         button1 = new JButton("Quiz Master"); //New button 1
-        button1.setBackground(Color.RED);
+        button1.setBackground(Color.PINK);
         button1.setForeground(Color.WHITE);
         button2 = new JButton("Player");
-        button2.setBackground(Color.BLUE);
+        button2.setBackground(Color.MAGENTA);
         button2.setForeground(Color.WHITE);
         SimpleListener ourListener = new SimpleListener();
         //Create an action listener for two buttons to share
@@ -69,6 +69,7 @@ public class JepordyPlayer extends JFrame {
 
         JPanel panel1 = new JPanel();
         String spaces = "                   ";
+        panel1.setBackground(Color.BLUE);
 
         panel1.add(new JLabel(spaces + "Please Pick a player The Qiuz Master Or Answer The Question!" + spaces));  
         panel1.setBorder(blackline);
@@ -80,13 +81,16 @@ public class JepordyPlayer extends JFrame {
         JPanel Rules = new JPanel();
         LayoutManager Decribe = new FlowLayout();
         Rules.setLayout(Decribe);
+        //Rules.setBackground(Color.BLUE);
         
         JPanel explain = new JPanel();
         String space = "                   ";
 
         explain.add(new JLabel("<html><i>Welcome To Jepordy This is a 4 player game with one being the Quiz Master and 3 being the Player! <br> You will have to compete trying to answer questions and the winner is demetmined at the end when the time runs out and who has more points.</i><html>"));  
         explain.setBorder(Rule);
+        explain.setBackground(Color.CYAN);
         Player.add(explain);
+
         //Action listner to buttons
         final Button player = new Button("Quiz Master");
         //Add buttons
@@ -98,8 +102,9 @@ public class JepordyPlayer extends JFrame {
         //Actives Buttons
         pane.add(Intro, BorderLayout.NORTH);
         pane.add(Player, BorderLayout.CENTER);
-        pane.add(Rules, BorderLayout.SOUTH);
-        pane.add(Quiz, BorderLayout.EAST);
+        //pane.add(Rules, BorderLayout.SOUTH);
+        //pane.add(Quiz, BorderLayout.EAST);
+        Intro.setBackground(Color.BLUE);
 
         //setLayout(new BorderLayout());
 		//setContentPane(new JLabel(new ImageIcon("Jeopardy.jpg")));
@@ -596,3 +601,4 @@ public class JepordyPlayer extends JFrame {
        // }
    // }
 }
+
