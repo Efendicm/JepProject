@@ -392,13 +392,13 @@ public class JepordyPlayer extends JFrame {
     private void Player() {
     	//Buttons
     	World = new JButton("World");
-        World.setBackground(Color.WHITE);
+        World.setBackground(Color.CYAN);
     	People = new JButton("People");
-        People.setBackground(Color.WHITE);
+        People.setBackground(Color.CYAN);
     	Planets = new JButton("Planets");
-        Planets.setBackground(Color.WHITE);
+        Planets.setBackground(Color.CYAN);
     	Animals = new JButton("Animals");
-        Animals.setBackground(Color.WHITE);
+        Animals.setBackground(Color.CYAN);
         W100 = new JButton("W100");
         W100.setBackground(Color.GREEN);
         W100.setForeground(Color.BLACK);
@@ -546,8 +546,6 @@ public class JepordyPlayer extends JFrame {
         //Display the window.
         quiz.add(Master, BorderLayout.NORTH);
         quiz.add(Master2, BorderLayout.CENTER);
-        //quiz.add(Master3, BorderLayout.WEST);
-        //quiz.add(Master4, BorderLayout.CENTER);
         quiz.pack();
         quiz.setVisible(true);   
 
@@ -577,28 +575,9 @@ public class JepordyPlayer extends JFrame {
         Quiz.setVisible(true);   
 
     }
-    //private class answers implements ActionListener{
-    //}
+    //Closes The Frame out
     public void CloseFrame(){
         super.dispose();
     }
-    //class MyComboBox extends JLabel implements ListCellRenderer
-   // {
-       // private String _title;
-
-      //  public MyComboBox(String title)
-       // {
-       //     _title = title;
-       // }
-
-       // @Override
-       // public Component getListCellRendererComponent(JList list, Object value,
-           //     int index, boolean isSelected, boolean hasFocus)
-      //  {
-          //  if (index == -1 && value == null) setText(_title);
-         //   else setText(value.toString());
-          //  return this;
-       // }
-   // }
 }
 
