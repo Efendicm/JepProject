@@ -8,11 +8,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
  
 public class JepordyPlayer extends JFrame {
-	//Combo box being named
-	//private static JComboBox World;
-	//private static JComboBox People;
-	//private static JComboBox Planets;
-	//private static JComboBox Animals;
     private static JFrame frame; //Define static variables for main to use
     private JButton World;
     private JButton People;
@@ -43,6 +38,7 @@ public class JepordyPlayer extends JFrame {
     public JepordyPlayer(String name) {
         super(name);
     }
+	//Creates the JPanel
      
     public void addComponentsToPane(final Container pane) {
         final JPanel Player = new JPanel();
