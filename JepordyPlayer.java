@@ -9,6 +9,10 @@ import javax.swing.border.Border;
  
 public class JepordyPlayer extends JFrame {
     private static JFrame frame; //Define static variables for main to use
+    private JButton AnswerW;
+    private JButton AnswerP;
+    private JButton Answerpl;
+    private JButton AnswerA;
     private JButton World;
     private JButton People;
     private JButton Planets;
@@ -551,8 +555,10 @@ public class JepordyPlayer extends JFrame {
         Quiz.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Set up the content pane.
         JPanel B = new JPanel();
+	JPanel A = new JPanel();
         GridLayout g = new GridLayout(0,2);
         B.setLayout(g);
+	A.setLayout(g);
         //Button
         Right = new JButton("Right");
         Right.setBackground(Color.GREEN);
@@ -560,13 +566,30 @@ public class JepordyPlayer extends JFrame {
         Wrong = new JButton("Wrong");
         Wrong.setBackground(Color.RED);
         Wrong.setForeground(Color.WHITE);
+	AnswerW = new JButton("World Answers");
+	AnswerW.setBackground(Color.CYAN);
+        AnswerW.setForeground(Color.WHITE);
+	AnswerP = new JButton("People Answers");
+	AnswerP.setBackground(Color.CYAN);
+        AnswerP.setForeground(Color.WHITE);
+	Answerpl = new JButton("Planets Answers");
+	Answerpl.setBackground(Color.CYAN);
+        Answerpl.setForeground(Color.WHITE);
+	AnswerA = new JButton("Animals Answers");
+	AnswerA.setBackground(Color.CYAN);
+        AnswerA.setForeground(Color.WHITE);
         //Button on JPanel
+	A.add(AnswerW);
+	A.add(AnswerP);
+	A.add(Answerpl);
+	A.add(AnswerA);
         B.add(Right);
         B.add(Wrong);
         //Action Listerner for button
         //SimpleListener answers = new SimpleListener();
         //Display the window.
         Quiz.add(B, BorderLayout.CENTER);
+	Quiz.add(A, BorderLayout.SOUTH);
         Quiz.pack();
         Quiz.setVisible(true);   
 
