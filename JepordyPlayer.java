@@ -86,19 +86,11 @@ public class JepordyPlayer extends JFrame {
         //Add buttons
         Player.add(button1); //Add buttons to the panel
         Player.add(button2);
-        //Player.add(new JButton("Quiz Master"));
-        //Quiz.add(new JButton("Answer Questions"));
          
         //Actives Buttons
         pane.add(Intro, BorderLayout.NORTH);
         pane.add(Player, BorderLayout.CENTER);
-        //pane.add(Rules, BorderLayout.SOUTH);
-        //pane.add(Quiz, BorderLayout.EAST);
         Intro.setBackground(Color.CYAN);
-
-        //setLayout(new BorderLayout());
-		//setContentPane(new JLabel(new ImageIcon("Jeopardy.jpg")));
-		//setLayout(new FlowLayout());
     }
     
      
@@ -441,68 +433,6 @@ public class JepordyPlayer extends JFrame {
         A400 = new JButton("A400");
         A400.setBackground(Color.RED);
         A400.setForeground(Color.BLACK);
-        //Action Listener For buttons
-        SimpleListener Cat = new SimpleListener();
-        SimpleListener Cat1 = new SimpleListener();
-        SimpleListener Cat2 = new SimpleListener();
-        SimpleListener Cat3 = new SimpleListener();
-        W100.addActionListener(Cat);
-        W200.addActionListener(Cat);
-        W300.addActionListener(Cat);
-        W400.addActionListener(Cat);
-        P100.addActionListener(Cat1);
-        P200.addActionListener(Cat1);
-        P300.addActionListener(Cat1);
-        P400.addActionListener(Cat1);
-        p100.addActionListener(Cat2);
-        p200.addActionListener(Cat2);
-        p300.addActionListener(Cat2);
-        p400.addActionListener(Cat2);
-        A100.addActionListener(Cat3);
-        A200.addActionListener(Cat3);
-        A300.addActionListener(Cat3);
-        A400.addActionListener(Cat3);
-        //Buttons Functions
-        //Action for each question cat
-//        class Cat implements ActionListener{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				String buttonName = e.getActionCommand();
-//				if (buttonName.equals("W100"))
-//				{
-//					World1();
-//					//JOptionPane.showMessageDialog(null,World1[index]);
-//
-//			}
-//        	
-//        }
-//        class Cat1 implements ActionListener{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				
-//				
-//			}
-//        	
-//        }
-//        class Cat2 implements ActionListener{
-//
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				
-//				
-//			}
-//        	
-//        }
-//        //class Cat3 implements ActionListener{
-//
-//			//@Override
-//			//public void actionPerformed(ActionEvent e) {
-//				
-//				
-//        }
-       // }
         //JPanel to make bored
     	JPanel Master = new JPanel();
     	JPanel Master2 = new JPanel();
@@ -579,8 +509,6 @@ public class JepordyPlayer extends JFrame {
 	A.add(AnswerA);
         B.add(Right);
         B.add(Wrong);
-        //Action Listerner for button
-        //SimpleListener answers = new SimpleListener();
         //Display the window.
         Quiz.add(B, BorderLayout.CENTER);
 	Quiz.add(A, BorderLayout.SOUTH);
