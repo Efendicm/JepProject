@@ -87,10 +87,14 @@ public class JepordyPlayer extends JFrame {
 		button2.addActionListener(ourListener);
 		//Add.addActionListener(ourListener);
 		//Intro Saying
-		JPanel Intro = new JPanel();
-		Intro.add(new JLabel("Jeopardy"));
+		Font font1 = new Font("Dialog", Font.BOLD, 50);
+		JLabel Intro = new JLabel("Jeopardy");
+		Intro.setFont(font1);
+		Intro.setSize(200, 200);
 		LayoutManager layout = new FlowLayout();  
-		Intro.setLayout(layout);       
+		Intro.setLayout(layout);    
+		Intro.setHorizontalAlignment(JLabel.CENTER);
+ 
 		//Rules
 		Border Rule = BorderFactory.createTitledBorder("Rules");
 		JPanel Rules = new JPanel();
@@ -104,7 +108,6 @@ public class JepordyPlayer extends JFrame {
 		explain.setBorder(Rule);
 		explain.setBackground(Color.CYAN);
 		Player.add(explain);
-		Intro.setFont(new Font("Dialog", Font.BOLD, 500));
 
 		//Action listner to buttons
 		final Button player = new Button("Quiz Master");
