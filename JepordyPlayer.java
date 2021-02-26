@@ -6,7 +6,6 @@ import java.util.Random;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-
 import jepordy.JepordyPlayer1.Action;
 
 public class JepordyPlayer extends JFrame {
@@ -94,7 +93,7 @@ public class JepordyPlayer extends JFrame {
 		LayoutManager layout = new FlowLayout();  
 		Intro.setLayout(layout);    
 		Intro.setHorizontalAlignment(JLabel.CENTER);
- 
+
 		//Rules
 		Border Rule = BorderFactory.createTitledBorder("Rules");
 		JPanel Rules = new JPanel();
@@ -838,7 +837,7 @@ public class JepordyPlayer extends JFrame {
 		Question.setLayout(quest);
 		An.add(Answer);
 		sub.add(b);
-		Question.setText("Question: " + Planets1[index]);
+		Question.setText("Question: " + People1[index]);
 		Question.setFont(new Font("Dialog", Font.BOLD, 30));
 		question.add(QuestionDisplay, BorderLayout.NORTH);
 		question.add(An, BorderLayout.CENTER);
@@ -1408,4 +1407,3 @@ public class JepordyPlayer extends JFrame {
 		super.dispose();
 	}
 }
-
