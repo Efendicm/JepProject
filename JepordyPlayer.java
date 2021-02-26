@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
+import network.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 //import jepordy.JepordyPlayer1.Action;
@@ -140,7 +140,7 @@ public class JepordyPlayer extends JFrame {
 			{
 				QuizMaster();
 				Playercount(e);
-				//CloseFrame();//Remove frame
+				CloseFrame();//Remove frame
 
 
 			}
@@ -148,7 +148,7 @@ public class JepordyPlayer extends JFrame {
 				//Player();
 				//Playercount1(e);
 				IpFrame();
-				//CloseFrame();
+				CloseFrame();
 			}
 
 			else if (buttonName.equals("W100")) {
@@ -971,16 +971,23 @@ public class JepordyPlayer extends JFrame {
 		submit.setSize(100, 25);
 		submit.setLocation(50, 25);
 		JFrame f = new JFrame("IP Input");
-		f.setSize(200, 100);
+		f.setSize(300, 200);
 		f.setLocation(120, 60);
 		f.setVisible(true);
 		f.add(submit);
 		f.add(ip);
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Player();
-				Playercount1(e);
-
+				JepClient client = new JepClient();
+				if (client.setIpAddress(ip.getText())) {
+					client.joinGame();
+					Player();
+					Playercount1(e);
+					CloseFrame();
+				}
+				else {
+					ip.setText("NOT A VALID IP");
+				}
 			}
 		});
 	}
@@ -1111,7 +1118,6 @@ public class JepordyPlayer extends JFrame {
 		quiz.add(Master2, BorderLayout.CENTER);
 		quiz.pack();
 		quiz.setVisible(true);   
-
 	}
 	private void QuizMaster() {
 		JFrame Quiz = new JFrame("Quiz Master" );
