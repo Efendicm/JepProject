@@ -6,7 +6,7 @@ import java.util.Random;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import jepordy.JepordyPlayer1.Action;
+//import jepordy.JepordyPlayer1.Action;
 
 public class JepordyPlayer extends JFrame {
 	private static JFrame frame; //Define static variables for main to use
@@ -54,13 +54,18 @@ public class JepordyPlayer extends JFrame {
 	private JButton Add1;
 	private JButton Add2;
 	private JButton Add3;
-	private JButton button1; //Define the button component here
-	private JButton button2; //To enable ActionListener to use
+	private JButton button1; //(QUIZ MASTER BUTTON)Define the button component here
+	private JButton button2; //(PLAYER BUTTON)To enable ActionListener to use
+	private JButton button3; //(IP ADDRESS)
+	private JTextArea ip;
+	private JButton submit;
 	//add score to game
 	private int score1 = 0;
 	private int score2 = 0;
 	private int score3 = 0;
 	GridLayout Intro = new GridLayout(0,1);
+
+
 
 	public JepordyPlayer(String name) {
 		super(name);
@@ -80,10 +85,14 @@ public class JepordyPlayer extends JFrame {
 		button2 = new JButton("Player");
 		button2.setBackground(Color.MAGENTA);
 		button2.setForeground(Color.BLACK);
+		//button3 = new JButton("IP Address");
+		//button3.setBackground(Color.BLACK);
+		//button3.setForeground(Color.WHITE);
 		SimpleListener ourListener = new SimpleListener();
 		//Create an action listener for two buttons to share
 		button1.addActionListener(ourListener);
 		button2.addActionListener(ourListener);
+		//button3.addActionListener(ourListener);
 		//Add.addActionListener(ourListener);
 		//Intro Saying
 		Font font1 = new Font("Dialog", Font.BOLD, 50);
@@ -112,6 +121,7 @@ public class JepordyPlayer extends JFrame {
 		final Button player = new Button("Quiz Master");
 		//Add buttons
 		Player.add(button1); //Add buttons to the panel
+		//Player.add(button3);
 		Player.add(button2);
 
 		//Actives Buttons
@@ -135,8 +145,9 @@ public class JepordyPlayer extends JFrame {
 
 			}
 			else if (buttonName.equals("Player")) {
-				Player();
-				Playercount1(e);
+				//Player();
+				//Playercount1(e);
+				IpFrame();
 				//CloseFrame();
 			}
 
@@ -952,6 +963,28 @@ public class JepordyPlayer extends JFrame {
 			}
 		});
 	}
+	private void IpFrame() {
+		ip = new JTextArea("Input Server IP Address Here");
+		ip.setSize(100, 10);
+		ip.setLocation(10, 10);
+		submit = new JButton("Submit!");
+		submit.setSize(100, 25);
+		submit.setLocation(50, 25);
+		JFrame f = new JFrame("IP Input");
+		f.setSize(200, 100);
+		f.setLocation(120, 60);
+		f.setVisible(true);
+		f.add(submit);
+		f.add(ip);
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Player();
+				Playercount1(e);
+
+			}
+		});
+	}
+
 	private void Player() {
 		//Buttons for questions
 		World = new JButton("World");
@@ -1032,7 +1065,7 @@ public class JepordyPlayer extends JFrame {
         A200.addActionListener(Question);
         A300.addActionListener(Question);
         A400.addActionListener(Question);
-		//JPanel to make bored
+		//JPanel to make board
 		Score = new JLabel("Score: ");
 		Score1 = new JLabel("Score: ");
 		Score2 = new JLabel("Score: ");
