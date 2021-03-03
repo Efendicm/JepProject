@@ -579,7 +579,7 @@ private void World1() {
 	 Answers A = new Answers();
 	 b.addActionListener(A);
 	//string for Questions
-	 final String[] World1 = {"EasyWQ1","EasyWQ2", "EasyWQ3","EasyWQ4"};
+	 final String[] World1 = {"The first president of the United States", "This icy continent will have you wishing for a parka!"};
 	Random random = new Random();
 	final int index = random.nextInt(World1.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -618,7 +618,7 @@ private void World2() {
 	 Answer = new JTextField(20);
 	 Answers A = new Answers();
 	 b.addActionListener(A);
-	final String[] World2 = {"MediumWQ1","MediumWQ2", "MediumWQ3","MediumWQ4"};
+	final String[] World2 = {"The oldest dynasty still ruling in 2021","The oldest civilization of mankind"};
 	Random random = new Random();
 	final int index = random.nextInt(World2.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -654,7 +654,7 @@ private void World3() {
 	 Answers A = new Answers();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] World3 = {"HardWQ1","HardWQ2", "HardWQ3","HardWQ4"};
+	final String[] World3 = {"'Pearl Harbour' is located in this large ocean","This U.S. president had to resign because of the watergate scandal"};
 	Random random = new Random();
 	final int index = random.nextInt(World3.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -690,7 +690,7 @@ private void World4() {
 	 Answers A = new Answers();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] World4 = {"ExpertWQ1","ExpertWQ2", "ExpertWQ3","ExpertWQ4"};
+	final String[] World4 = {"The invasion of this country in 1939 is widely regarded to have started World War II", "This '50s & '60s Soviet leader who told the West we will bury you is himself buried at Novodevichy Cemetery"};
 	Random random = new Random();
 	final int index = random.nextInt(World4.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -726,7 +726,7 @@ private void People1() {
 	 An A = new An();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] People1 = {"EasyPQ1","EasyPQ2", "EasyPQ3","EasyPQ4"};
+	final String[] People1 = {"This famous director is set for life after creating the series 'Star Wars'", "Whether he's Indiana Jones or Han solo, this sly dog has all of the fans obsessed"};
 	Random random = new Random();
 	final int index = random.nextInt(People1.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -762,7 +762,7 @@ private void People2() {
 	 An A = new An();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] People2 = {"MediumPQ1","MediumPQ2", "MediumPQ3","MediumPQ4"};
+	final String[] People2 = {"Before sinking his teeth into a Twilight role he played Cedric Diggory in a Harry Potter film", "As opposed to JLo she's JLaw"};
 	Random random = new Random();
 	final int index = random.nextInt(People2.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -798,7 +798,7 @@ private void People3() {
 	 An A = new An();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] People3 = {"HardPQ1","HardPQ2", "HardPQ3","HardPQ4"};
+	final String[] People3 = {"According to this rapper Yeezus is his God name", "This National techno duo is known for bringing forward the trend of 'EDM'"};
 	Random random = new Random();
 	final int index = random.nextInt(People3.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -834,7 +834,7 @@ private void People4() {
 	 An A = new An();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] People4 = {"ExpertPQ1","ExpertPQ2", "ExpertPQ3","ExpertPQ4"};
+	final String[] People4 = {"This NBA shooting guard was named for expensive Japanese beef", "He's the funnyman who starred in Grown Ups Jack and Jill & Bedtime Stories"};
 	Random random = new Random();
 	final int index = random.nextInt(People4.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -870,7 +870,7 @@ private  void Planets1() {
 	 An2 A = new An2();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Planets1 = {"EasypQ1","EasypQ2", "EasypQ3","EasypQ4"};
+	final String[] Planets1 = {"This planet is closest to our own sun", "This floating ball of dense gas we call a planet is surrounded by a giant 'ring'"};
 	Random random = new Random();
 	final int index = random.nextInt(Planets1.length);
 	JepordyPlayer question = new JepordyPlayer("Question");
@@ -906,7 +906,7 @@ private void Planets2() {
 	 An2 A = new An2();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Planets2 = {"MediumpQ1","MediumpQ2", "MediumpQ3","MediumpQ4"};
+	final String[] Planets2 = {"This massive planet has 79 moons", "This tiny planet takes 248 years to orbit our sun!"};
 	Random random = new Random();
 	final int index = random.nextInt(Planets2.length);
 	//JOptionPane.showMessageDialog(null,Planets2[index]);
@@ -942,7 +942,7 @@ private void Planets3() {
 	 An2 A = new An2();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Planets3 = {"HardpQ1","HardpQ2", "HardpQ3","HardpQ4"};
+	final String[] Planets3 = {"This Red Supergiant is the closest star to our solar system", "This blue planet is almost 63 times larger than earth and is often used as a joke"};
 	Random random = new Random();
 	final int index = random.nextInt(Planets3.length);
 	//JOptionPane.showMessageDialog(null,Planets3[index]);
@@ -978,7 +978,7 @@ private void Planets4() {
 	 An2 A = new An2();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Planets4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
+	final String[] Planets4 = {"This small moon orbiting Jupiter is about the size of earth, almost liveable if it wasn't for the massive gravitational pull", "This interesting moon orbiting Saturn is covered completely in frozen water, who knows what lies beneath the surface"};
 	Random random = new Random();
 	final int index = random.nextInt(Planets4.length);
 	//JOptionPane.showMessageDialog(null,Planets4[index]);
@@ -1014,7 +1014,7 @@ private void Animals1() {
 	 An3 A = new An3();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Animals1 = {"EasyAQ1","EasyAQ2", "EasyAQ3","EasyAQ4"};
+	final String[] Animals1 = {"This semi-intelligent life form slowly turned into a human", "This continent specific mammal is known for being agressive and good at kicking"};
 	Random random = new Random();
 	final int index = random.nextInt(Animals1.length);
 	//JOptionPane.showMessageDialog(null,Animals1[index]);
@@ -1050,7 +1050,7 @@ private void Animals2() {
 	 An3 A = new An3();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Animals2 = {"MediumAQ1","MediumAQ2", "MediumAQ3","MediumAQ4"};
+	final String[] Animals2 = {"This animal eats garabage and is associated with a bandit", "This flying animal has more importance to America than it will ever know"};
 	Random random = new Random();
 	final int index = random.nextInt(Animals2.length);
 	//JOptionPane.showMessageDialog(null,Animals2[index]);
@@ -1086,7 +1086,7 @@ private void Animals3() {
 	 An3 A = new An3();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Animals3 = {"HardAQ1","HardAQ2", "HardAQ3","HardAQ4"};
+	final String[] Animals3 = {"A female Elk is referred to as this term", "This ocean living mammal is the largest species to ever exist on our planet"};
 	Random random = new Random();
 	final int index = random.nextInt(Animals3.length);
 	//JOptionPane.showMessageDialog(null,Animals3[index]);
@@ -1122,7 +1122,7 @@ private void Animals4() {
 	 An3 A = new An3();
 	 b.addActionListener(A);
 	//string for Questions
-	final String[] Animals4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
+	final String[] Animals4 = {"This animal is the slowest in the world", "This animal never sleeps"};
 	Random random = new Random();
 	final int index = random.nextInt(Animals4.length);
 	//JOptionPane.showMessageDialog(null,Animals4[index]);
