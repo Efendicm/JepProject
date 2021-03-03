@@ -70,6 +70,8 @@ public class JepordyPlayer extends JFrame {
 	private int score3 = 0;
 	GridLayout Intro = new GridLayout(0,1);
 
+	private JepServer server;
+
 
 
 	public JepordyPlayer(String name) {
@@ -143,6 +145,9 @@ public class JepordyPlayer extends JFrame {
 			String buttonName = e.getActionCommand();
 			if (buttonName.equals("Quiz Master"))
 			{
+				server=new JepServer();
+				Thread serverThread=new Thread(server);
+				serverThread.start();
 				QuizMaster();
 				Playercount(e);
 				CloseFrame();//Remove frame
