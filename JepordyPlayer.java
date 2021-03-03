@@ -13,6 +13,11 @@ public class JepordyPlayer extends JFrame {
 	private JButton b;
 	private String Input = "";
 	private String Quest = "";
+	private String Quest2 = "";
+	private String Quest3 = "";
+	private static JTextField Ans;
+	private static JTextField Ans2;
+	private static JTextField Ans3;
 	private static JTextField Answer;
 	private static JLabel Score;
 	private static JLabel Score1;
@@ -231,7 +236,7 @@ public class JepordyPlayer extends JFrame {
 			else if (buttonName.equals("A400")) {
 				Animals4();
 				A400.setEnabled(false);
-
+			
 			}
 			else if (buttonName.equals("World Answers")) {
 				WorldAnswers();
@@ -453,493 +458,696 @@ public class JepordyPlayer extends JFrame {
 //		
 //	}
 //	}
-	private void WorldAnswers() {
-		JepordyPlayer Answers = new JepordyPlayer("Question");
-		Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		Answers.setPreferredSize(new Dimension(600, 600));
-	    Answers.setLocationRelativeTo(null);
-		Answers.pack();       
-		Answers.setVisible(true);
-		JPanel response = new JPanel();
-		JLabel Response = new JLabel("Players Response:");
-		JLabel Question = new JLabel("Players Response:");
-		GridLayout answer = new GridLayout(0,1);
-		response.setLayout(answer);
-		response.add(Response);
-		Input = Answer.getText();
-		Response.setText("Players Answer: " + Input);
-		Answers.add(response);
-		Answers.add(response, BorderLayout.CENTER);
-	}
-	private void PeopleAnswers() {
-		JepordyPlayer Answers = new JepordyPlayer("Question");
-		Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		Answers.setPreferredSize(new Dimension(600, 600));
-	    Answers.setLocationRelativeTo(null);
-		Answers.pack();       
-		Answers.setVisible(true);
-		JPanel response = new JPanel();
-		JLabel Response = new JLabel("Players Response:");
-		JLabel Question = new JLabel("Players Response:");
-		GridLayout answer = new GridLayout(0,1);
-		response.setLayout(answer);
-		response.add(Response);
-		Input = Answer.getText();
-		Response.setText("Players Answer: " + Input);
-		Answers.add(response);
-		Answers.add(response, BorderLayout.CENTER);
-	}
-	private void PlanetsAnswers() {
-		JepordyPlayer Answers = new JepordyPlayer("Question");
-		Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		Answers.setPreferredSize(new Dimension(600, 600));
-	    Answers.setLocationRelativeTo(null);
-		Answers.pack();       
-		Answers.setVisible(true);
-		JPanel response = new JPanel();
-		JLabel Response = new JLabel("Players Response:");
-		JLabel Question = new JLabel("Players Response:");
-		GridLayout answer = new GridLayout(0,1);
-		response.setLayout(answer);
-		response.add(Response);
-		Input = Answer.getText();
-		Response.setText("Players Answer: " + Input);
-		Answers.add(response);
-		Answers.add(response, BorderLayout.CENTER);
-	}
-	private void AnimalsAnswers() {
-		JepordyPlayer Answers = new JepordyPlayer("Question");
-		Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		Answers.setPreferredSize(new Dimension(600, 600));
-	    Answers.setLocationRelativeTo(null);
-		Answers.pack();       
-		Answers.setVisible(true);
-		JPanel response = new JPanel();
-		JLabel Response = new JLabel("Players Response:");
-		JLabel Question = new JLabel("Players Response:");
-		GridLayout answer = new GridLayout(0,1);
-		response.setLayout(answer);
-		response.add(Response);
-		Input = Answer.getText();
-		Response.setText("Players Answer: " + Input);
-		Answers.add(response);
-		Answers.add(response, BorderLayout.CENTER);
-	}
-	private void World1() {
-		 JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		 final String[] World1 = {"EasyWQ1","EasyWQ2", "EasyWQ3","EasyWQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(World1.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + World1[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		
-		
-		
-		
+private class An implements ActionListener{
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String buttonName = e.getActionCommand();
+		if(buttonName.equals("Submit")) {
+		Ans.setText(Quest);
 	}
-	private void World2() {
-		//string for Questions
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		final String[] World2 = {"MediumWQ1","MediumWQ2", "MediumWQ3","MediumWQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(World2.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + World2[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,World2[index]);
+	
+}
+}
+private class An2 implements ActionListener{
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String buttonName = e.getActionCommand();
+		if(buttonName.equals("Submit")) {
+		Ans2.setText(Quest2);
 	}
-	private void World3() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] World3 = {"HardWQ1","HardWQ2", "HardWQ3","HardWQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(World3.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + World3[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,World1[index]);
+	
+}
+}
+private class An3 implements ActionListener{
 
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String buttonName = e.getActionCommand();
+		if(buttonName.equals("Submit")) {
+		Ans3.setText(Quest3);
 	}
-	private void World4() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] World4 = {"ExpertWQ1","ExpertWQ2", "ExpertWQ3","ExpertWQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(World4.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + World4[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,World1[index]);
+	
+}
+}
 
-	}
-	private void People1() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] People1 = {"EasyPQ1","EasyPQ2", "EasyPQ3","EasyPQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(People1.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + People1[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,People1[index]);
+private void WorldAnswers() {
+	JepordyPlayer Answers = new JepordyPlayer("Question");
+	Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	Answers.setPreferredSize(new Dimension(600, 600));
+	Answers.setLocationRelativeTo(null);
+	Answers.pack();       
+	Answers.setVisible(true);
+	JPanel response = new JPanel();
+	JLabel Response = new JLabel("Players Response:");
+	JLabel Question = new JLabel("Players Response:");
+	GridLayout answer = new GridLayout(0,1);
+	response.setLayout(answer);
+	response.add(Response);
+	Input = Answer.getText();
+	Response.setText("Players Answer: " + Input);
+	Answers.add(response);
+	Answers.add(response, BorderLayout.CENTER);
+}
+private void PeopleAnswers() {
+	JepordyPlayer Answers = new JepordyPlayer("Question");
+	Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	Answers.setPreferredSize(new Dimension(600, 600));
+	Answers.setLocationRelativeTo(null);
+	Answers.pack();       
+	Answers.setVisible(true);
+	JPanel response = new JPanel();
+	JLabel Response = new JLabel("Players Response:");
+	JLabel Question = new JLabel("Players Response:");
+	GridLayout answer = new GridLayout(0,1);
+	response.setLayout(answer);
+	response.add(Response);
+	Quest = Ans.getText();
+	Response.setText("Players Answer: " + Quest);
+	Answers.add(response);
+	Answers.add(response, BorderLayout.CENTER);
+}
+private void PlanetsAnswers() {
+	JepordyPlayer Answers = new JepordyPlayer("Question");
+	Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	Answers.setPreferredSize(new Dimension(600, 600));
+	Answers.setLocationRelativeTo(null);
+	Answers.pack();       
+	Answers.setVisible(true);
+	JPanel response = new JPanel();
+	JLabel Response = new JLabel("Players Response:");
+	JLabel Question = new JLabel("Players Response:");
+	GridLayout answer = new GridLayout(0,1);
+	response.setLayout(answer);
+	response.add(Response);
+	Quest2 = Ans2.getText();
+	Response.setText("Players Answer: " + Quest2);
+	Answers.add(response);
+	Answers.add(response, BorderLayout.CENTER);
+}
+private void AnimalsAnswers() {
+	JepordyPlayer Answers = new JepordyPlayer("Question");
+	Answers.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	Answers.setPreferredSize(new Dimension(600, 600));
+	Answers.setLocationRelativeTo(null);
+	Answers.pack();       
+	Answers.setVisible(true);
+	JPanel response = new JPanel();
+	JLabel Response = new JLabel("Players Response:");
+	JLabel Question = new JLabel("Players Response:");
+	GridLayout answer = new GridLayout(0,1);
+	response.setLayout(answer);
+	response.add(Response);
+	Quest3 = Ans3.getText();
+	Response.setText("Players Answer: " + Quest3);
+	Answers.add(response);
+	Answers.add(response, BorderLayout.CENTER);
+}
+private void World1() {
+	 JButton b = new JButton("submit");
+	 Answer = new JTextField(20);
+	 Answers A = new Answers();
+	 b.addActionListener(A);
+	//string for Questions
+	 final String[] World1 = {"EasyWQ1","EasyWQ2", "EasyWQ3","EasyWQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(World1.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Answer);
+	sub.add(b);
+	Question.setText("Question: " + World1[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	
+	
+	
+	
 
-	}
-	private void People2() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] People2 = {"MediumPQ1","MediumPQ2", "MediumPQ3","MediumPQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(People2.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + People2[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,People2[index]);
+}
+private void World2() {
+	//string for Questions
+	JButton b = new JButton("submit");
+	 Answer = new JTextField(20);
+	 Answers A = new Answers();
+	 b.addActionListener(A);
+	final String[] World2 = {"MediumWQ1","MediumWQ2", "MediumWQ3","MediumWQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(World2.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Answer);
+	sub.add(b);
+	Question.setText("Question: " + World2[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,World2[index]);
 
-	}
-	private void People3() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] People3 = {"HardPQ1","HardPQ2", "HardPQ3","HardPQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(People3.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + People3[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,People3[index]);
+}
+private void World3() {
+	JButton b = new JButton("submit");
+	 Answer = new JTextField(20);
+	 Answers A = new Answers();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] World3 = {"HardWQ1","HardWQ2", "HardWQ3","HardWQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(World3.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Answer);
+	sub.add(b);
+	Question.setText("Question: " + World3[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,World1[index]);
 
-	}
-	private void People4() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] People4 = {"ExpertPQ1","ExpertPQ2", "ExpertPQ3","ExpertPQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(People4.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + People4[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,People4[index]);
+}
+private void World4() {
+	JButton b = new JButton("submit");
+	 Answer = new JTextField(20);
+	 Answers A = new Answers();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] World4 = {"ExpertWQ1","ExpertWQ2", "ExpertWQ3","ExpertWQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(World4.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Answer);
+	sub.add(b);
+	Question.setText("Question: " + World4[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,World1[index]);
 
-	}
-	private  void Planets1() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Planets1 = {"EasypQ1","EasypQ2", "EasypQ3","EasypQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Planets1.length);
-		JepordyPlayer question = new JepordyPlayer("Question");
-		question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		//Display the window.
-		question.setPreferredSize(new Dimension(600, 600));
-	    question.setLocationRelativeTo(null);
-		question.pack();       
-		question.setVisible(true);
-		Question = new JLabel("Question: ");
-		JPanel QuestionDisplay = new JPanel();
-		JPanel An = new JPanel();
-		JPanel sub = new JPanel();
-		QuestionDisplay.add(Question);
-		GridLayout quest = new GridLayout(0,1);
-		GridLayout answer = new GridLayout(0,1);
-		An.setLayout(answer);
-		sub.setLayout(answer);
-		Question.setLayout(quest);
-		An.add(Answer);
-		sub.add(b);
-		Question.setText("Question: " + People1[index]);
-		Question.setFont(new Font("Dialog", Font.BOLD, 30));
-		question.add(QuestionDisplay, BorderLayout.NORTH);
-		question.add(An, BorderLayout.CENTER);
-		question.add(sub, BorderLayout.SOUTH);
-		//JOptionPane.showMessageDialog(null,Planets1[index]);
+}
+private void People1() {
+	JButton b = new JButton("submit");
+	 Ans = new JTextField(20);
+	 An A = new An();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] People1 = {"EasyPQ1","EasyPQ2", "EasyPQ3","EasyPQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(People1.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans);
+	sub.add(b);
+	Question.setText("Question: " + People1[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,People1[index]);
 
-	}
-	private void Planets2() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Planets2 = {"MediumpQ1","MediumpQ2", "MediumpQ3","MediumpQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Planets2.length);
-		JOptionPane.showMessageDialog(null,Planets2[index]);
+}
+private void People2() {
+	JButton b = new JButton("submit");
+	 Ans = new JTextField(20);
+	 An A = new An();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] People2 = {"MediumPQ1","MediumPQ2", "MediumPQ3","MediumPQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(People2.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans);
+	sub.add(b);
+	Question.setText("Question: " + People2[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,People2[index]);
 
-	}
-	private void Planets3() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Planets3 = {"HardpQ1","HardpQ2", "HardpQ3","HardpQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Planets3.length);
-		JOptionPane.showMessageDialog(null,Planets3[index]);
+}
+private void People3() {
+	JButton b = new JButton("submit");
+	 Ans = new JTextField(20);
+	 An A = new An();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] People3 = {"HardPQ1","HardPQ2", "HardPQ3","HardPQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(People3.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans);
+	sub.add(b);
+	Question.setText("Question: " + People3[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,People3[index]);
 
-	}
-	private void Planets4() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Planets4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Planets4.length);
-		JOptionPane.showMessageDialog(null,Planets4[index]);
+}
+private void People4() {
+	JButton b = new JButton("submit");
+	 Ans = new JTextField(20);
+	 An A = new An();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] People4 = {"ExpertPQ1","ExpertPQ2", "ExpertPQ3","ExpertPQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(People4.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans);
+	sub.add(b);
+	Question.setText("Question: " + People4[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,People4[index]);
 
-	}
-	private void Animals1() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Animals1 = {"EasyAQ1","EasyAQ2", "EasyAQ3","EasyAQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Animals1.length);
-		JOptionPane.showMessageDialog(null,Animals1[index]);
+}
+private  void Planets1() {
+	JButton b = new JButton("submit");
+	 Ans2 = new JTextField(20);
+	 An2 A = new An2();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Planets1 = {"EasypQ1","EasypQ2", "EasypQ3","EasypQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Planets1.length);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans2);
+	sub.add(b);
+	Question.setText("Question: " + Planets1[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+	//JOptionPane.showMessageDialog(null,Planets1[index]);
 
-	}
-	private void Animals2() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Animals2 = {"MediumAQ1","MediumAQ2", "MediumAQ3","MediumAQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Animals2.length);
-		JOptionPane.showMessageDialog(null,Animals2[index]);
+}
+private void Planets2() {
+	JButton b = new JButton("submit");
+	 Ans2 = new JTextField(20);
+	 An2 A = new An2();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Planets2 = {"MediumpQ1","MediumpQ2", "MediumpQ3","MediumpQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Planets2.length);
+	//JOptionPane.showMessageDialog(null,Planets2[index]);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans2);
+	sub.add(b);
+	Question.setText("Question: " + Planets2[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
 
-	}
-	private void Animals3() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Animals3 = {"HardAQ1","HardAQ2", "HardAQ3","HardAQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Animals3.length);
-		JOptionPane.showMessageDialog(null,Animals3[index]);
+}
+private void Planets3() {
+	JButton b = new JButton("submit");
+	 Ans2 = new JTextField(20);
+	 An2 A = new An2();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Planets3 = {"HardpQ1","HardpQ2", "HardpQ3","HardpQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Planets3.length);
+	//JOptionPane.showMessageDialog(null,Planets3[index]);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans2);
+	sub.add(b);
+	Question.setText("Question: " + Planets3[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
 
-	}
-	private void Animals4() {
-		JButton b = new JButton("submit");
-		 Answer = new JTextField(20);
-		 Answers A = new Answers();
-		 b.addActionListener(A);
-		//string for Questions
-		final String[] Animals4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
-		Random random = new Random();
-		final int index = random.nextInt(Animals4.length);
-		JOptionPane.showMessageDialog(null,Animals4[index]);
+}
+private void Planets4() {
+	JButton b = new JButton("submit");
+	 Ans2 = new JTextField(20);
+	 An2 A = new An2();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Planets4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Planets4.length);
+	//JOptionPane.showMessageDialog(null,Planets4[index]);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans2);
+	sub.add(b);
+	Question.setText("Question: " + Planets4[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
 
-	}
+}
+private void Animals1() {
+	JButton b = new JButton("submit");
+	 Ans3 = new JTextField(20);
+	 An3 A = new An3();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Animals1 = {"EasyAQ1","EasyAQ2", "EasyAQ3","EasyAQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Animals1.length);
+	//JOptionPane.showMessageDialog(null,Animals1[index]);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans3);
+	sub.add(b);
+	Question.setText("Question: " + Animals1[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+
+}
+private void Animals2() {
+	JButton b = new JButton("submit");
+	 Ans3 = new JTextField(20);
+	 An3 A = new An3();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Animals2 = {"MediumAQ1","MediumAQ2", "MediumAQ3","MediumAQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Animals2.length);
+	//JOptionPane.showMessageDialog(null,Animals2[index]);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans3);
+	sub.add(b);
+	Question.setText("Question: " + Animals2[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+
+}
+private void Animals3() {
+	JButton b = new JButton("submit");
+	 Ans3 = new JTextField(20);
+	 An3 A = new An3();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Animals3 = {"HardAQ1","HardAQ2", "HardAQ3","HardAQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Animals3.length);
+	//JOptionPane.showMessageDialog(null,Animals3[index]);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans3);
+	sub.add(b);
+	Question.setText("Question: " + Animals3[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+
+}
+private void Animals4() {
+	JButton b = new JButton("submit");
+	 Ans3 = new JTextField(20);
+	 An3 A = new An3();
+	 b.addActionListener(A);
+	//string for Questions
+	final String[] Animals4 = {"ExpertAQ1","ExpertAQ2", "ExpertAQ3","ExpertAQ4"};
+	Random random = new Random();
+	final int index = random.nextInt(Animals4.length);
+	//JOptionPane.showMessageDialog(null,Animals4[index]);
+	JepordyPlayer question = new JepordyPlayer("Question");
+	question.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	//Display the window.
+	question.setPreferredSize(new Dimension(600, 600));
+	question.setLocationRelativeTo(null);
+	question.pack();       
+	question.setVisible(true);
+	Question = new JLabel("Question: ");
+	JPanel QuestionDisplay = new JPanel();
+	JPanel An = new JPanel();
+	JPanel sub = new JPanel();
+	QuestionDisplay.add(Question);
+	GridLayout quest = new GridLayout(0,1);
+	GridLayout answer = new GridLayout(0,1);
+	An.setLayout(answer);
+	sub.setLayout(answer);
+	Question.setLayout(quest);
+	An.add(Ans3);
+	sub.add(b);
+	Question.setText("Question: " + Animals4[index]);
+	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	question.add(QuestionDisplay, BorderLayout.NORTH);
+	question.add(An, BorderLayout.CENTER);
+	question.add(sub, BorderLayout.SOUTH);
+
+}
+
 
 	private static void createAndShowGUI() {
 		//Create and set up the window.
