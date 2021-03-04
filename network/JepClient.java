@@ -122,6 +122,10 @@ public class JepClient implements Runnable{
         }
         return board;
     }
+    public boolean sendAnswer(String in){
+        if(sendReceive("ans:"+in).equals("ok"))return true;
+        return false;
+    }
 
     private String getIpAddress(){//based on code found at https://stackoverflow.com/questions/9481865/getting-the-ip-address-of-the-current-machine-using-java
         String out="err:";
@@ -138,7 +142,7 @@ public class JepClient implements Runnable{
         if(debug)System.out.println("   Client:"+send);
         String receive="err:";
         try{
-            Socket s=new Socket(ipaddress,80);
+            Socket s=new Socket(ipaddress,8080);
             BufferedReader in=new BufferedReader(new InputStreamReader(s.getInputStream()));
             BufferedWriter out=new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
             out.write(send+"\n");
