@@ -514,7 +514,7 @@ private void WorldAnswers() {
 	GridLayout answer = new GridLayout(0,1);
 	response.setLayout(answer);
 	response.add(Response);
-	Input = Answer.getText();
+	//Input = Answer.getText();
 	Input = server.getAnswer();
 	Response.setText("Players Answer: " + Input);
 	Answers.add(response);
@@ -534,7 +534,8 @@ private void PeopleAnswers() {
 	GridLayout answer = new GridLayout(0,1);
 	response.setLayout(answer);
 	response.add(Response);
-	Quest = Ans.getText();
+	//Quest = Ans.getText();
+	Quest=server.getAnswer();
 	Response.setText("Players Answer: " + Quest);
 	Answers.add(response);
 	Answers.add(response, BorderLayout.CENTER);
@@ -553,7 +554,8 @@ private void PlanetsAnswers() {
 	GridLayout answer = new GridLayout(0,1);
 	response.setLayout(answer);
 	response.add(Response);
-	Quest2 = Ans2.getText();
+	//Quest2 = Ans2.getText();
+	Quest2=server.getAnswer();
 	Response.setText("Players Answer: " + Quest2);
 	Answers.add(response);
 	Answers.add(response, BorderLayout.CENTER);
@@ -572,7 +574,8 @@ private void AnimalsAnswers() {
 	GridLayout answer = new GridLayout(0,1);
 	response.setLayout(answer);
 	response.add(Response);
-	Quest3 = Ans3.getText();
+	//Quest3 = Ans3.getText();
+	Quest3=server.getAnswer();
 	Response.setText("Players Answer: " + Quest3);
 	Answers.add(response);
 	Answers.add(response, BorderLayout.CENTER);
