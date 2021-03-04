@@ -447,10 +447,12 @@ public class JepordyPlayer extends JFrame {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			String buttonName = e.getActionCommand();
-			if(buttonName.equals("Submit")) {
+			Input = Answer.getText();
+			client.sendAnswer(Input);
 			Answer.setText(Input);
-		}
+			//System.out.println(client.sendAnswer(Input));
+			//System.out.println("haewfowe");
+
 		
 	}
 	}
@@ -469,35 +471,33 @@ private class An implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String buttonName = e.getActionCommand();
-		if(buttonName.equals("Submit")) {
 		Ans.setText(Quest);
+		System.out.println(client.sendAnswer(Quest));
+		System.out.println("haewfowe");
 	}
 	
 }
-}
+
 private class An2 implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String buttonName = e.getActionCommand();
-		if(buttonName.equals("Submit")) {
 		Ans2.setText(Quest2);
-		client.sendAnswer(Quest2);
+		System.out.println(client.sendAnswer(Quest2));
+		System.out.println("haewfowe");
 	}
 	
 }
-}
+
 private class An3 implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String buttonName = e.getActionCommand();
-		if(buttonName.equals("Submit")) {
 		Ans3.setText(Quest3);
+		System.out.println(client.sendAnswer(Quest3));
+		System.out.println("haewfowe");
 	}
 	
-}
 }
 
 private void WorldAnswers() {
@@ -515,6 +515,7 @@ private void WorldAnswers() {
 	response.setLayout(answer);
 	response.add(Response);
 	Input = Answer.getText();
+	Input = server.getAnswer();
 	Response.setText("Players Answer: " + Input);
 	Answers.add(response);
 	Answers.add(response, BorderLayout.CENTER);
@@ -578,6 +579,7 @@ private void AnimalsAnswers() {
 }
 private void World1() {
 	 JButton b = new JButton("submit");
+	 System.out.println("haewfowe");
 	 Answer = new JTextField(20);
 	 Answers A = new Answers();
 	 b.addActionListener(A);
