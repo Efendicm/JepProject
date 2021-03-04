@@ -71,6 +71,7 @@ public class JepordyPlayer extends JFrame {
 	GridLayout Intro = new GridLayout(0,1);
 
 	private JepServer server;
+	private JepClient client;
 
 
 
@@ -148,6 +149,7 @@ public class JepordyPlayer extends JFrame {
 				server=new JepServer();
 				Thread serverThread=new Thread(server);
 				serverThread.start();
+				System.out.println(server.getIpAddress());
 				QuizMaster();
 				Playercount(e);
 				CloseFrame();//Remove frame
@@ -481,6 +483,7 @@ private class An2 implements ActionListener{
 		String buttonName = e.getActionCommand();
 		if(buttonName.equals("Submit")) {
 		Ans2.setText(Quest2);
+		client.sendAnswer(Quest2);
 	}
 	
 }
@@ -1191,7 +1194,7 @@ private void Animals4() {
 		f.add(ip);
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JepClient client = new JepClient();
+				client = new JepClient();
 				if (client.setIpAddress(ip.getText())) {
 					client.joinGame();
 					Player();
