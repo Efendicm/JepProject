@@ -471,6 +471,8 @@ private class An implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Quest = Ans.getText();
+		client.sendAnswer(Quest);
 		Ans.setText(Quest);
 		System.out.println(client.sendAnswer(Quest));
 		System.out.println("haewfowe");
@@ -482,6 +484,8 @@ private class An2 implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Quest2 = Ans2.getText();
+		client.sendAnswer(Quest);
 		Ans2.setText(Quest2);
 		System.out.println(client.sendAnswer(Quest2));
 		System.out.println("haewfowe");
@@ -493,6 +497,8 @@ private class An3 implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Quest3 = Ans3.getText();
+		client.sendAnswer(Quest);
 		Ans3.setText(Quest3);
 		System.out.println(client.sendAnswer(Quest3));
 		System.out.println("haewfowe");
@@ -535,7 +541,7 @@ private void PeopleAnswers() {
 	response.setLayout(answer);
 	response.add(Response);
 	//Quest = Ans.getText();
-	Quest=server.getAnswer();
+	Quest = server.getAnswer();
 	Response.setText("Players Answer: " + Quest);
 	Answers.add(response);
 	Answers.add(response, BorderLayout.CENTER);
@@ -555,7 +561,7 @@ private void PlanetsAnswers() {
 	response.setLayout(answer);
 	response.add(Response);
 	//Quest2 = Ans2.getText();
-	Quest2=server.getAnswer();
+	Quest2 = server.getAnswer();
 	Response.setText("Players Answer: " + Quest2);
 	Answers.add(response);
 	Answers.add(response, BorderLayout.CENTER);
@@ -575,7 +581,7 @@ private void AnimalsAnswers() {
 	response.setLayout(answer);
 	response.add(Response);
 	//Quest3 = Ans3.getText();
-	Quest3=server.getAnswer();
+	Quest3 = server.getAnswer();
 	Response.setText("Players Answer: " + Quest3);
 	Answers.add(response);
 	Answers.add(response, BorderLayout.CENTER);
@@ -610,7 +616,7 @@ private void World1() {
 	An.add(Answer);
 	sub.add(b);
 	Question.setText("Question: " + World1[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -649,7 +655,7 @@ private void World2() {
 	An.add(Answer);
 	sub.add(b);
 	Question.setText("Question: " + World2[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -685,7 +691,7 @@ private void World3() {
 	An.add(Answer);
 	sub.add(b);
 	Question.setText("Question: " + World3[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -721,7 +727,7 @@ private void World4() {
 	An.add(Answer);
 	sub.add(b);
 	Question.setText("Question: " + World4[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -757,7 +763,7 @@ private void People1() {
 	An.add(Ans);
 	sub.add(b);
 	Question.setText("Question: " + People1[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -793,7 +799,7 @@ private void People2() {
 	An.add(Ans);
 	sub.add(b);
 	Question.setText("Question: " + People2[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -829,7 +835,7 @@ private void People3() {
 	An.add(Ans);
 	sub.add(b);
 	Question.setText("Question: " + People3[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -865,7 +871,7 @@ private void People4() {
 	An.add(Ans);
 	sub.add(b);
 	Question.setText("Question: " + People4[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -901,7 +907,7 @@ private  void Planets1() {
 	An.add(Ans2);
 	sub.add(b);
 	Question.setText("Question: " + Planets1[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -938,7 +944,7 @@ private void Planets2() {
 	An.add(Ans2);
 	sub.add(b);
 	Question.setText("Question: " + Planets2[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -974,7 +980,7 @@ private void Planets3() {
 	An.add(Ans2);
 	sub.add(b);
 	Question.setText("Question: " + Planets3[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -1010,7 +1016,7 @@ private void Planets4() {
 	An.add(Ans2);
 	sub.add(b);
 	Question.setText("Question: " + Planets4[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -1046,7 +1052,7 @@ private void Animals1() {
 	An.add(Ans3);
 	sub.add(b);
 	Question.setText("Question: " + Animals1[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -1082,7 +1088,7 @@ private void Animals2() {
 	An.add(Ans3);
 	sub.add(b);
 	Question.setText("Question: " + Animals2[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -1118,7 +1124,7 @@ private void Animals3() {
 	An.add(Ans3);
 	sub.add(b);
 	Question.setText("Question: " + Animals3[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
@@ -1154,7 +1160,7 @@ private void Animals4() {
 	An.add(Ans3);
 	sub.add(b);
 	Question.setText("Question: " + Animals4[index]);
-	Question.setFont(new Font("Dialog", Font.BOLD, 30));
+	Question.setFont(new Font("Dialog", Font.BOLD, 12));
 	question.add(QuestionDisplay, BorderLayout.NORTH);
 	question.add(An, BorderLayout.CENTER);
 	question.add(sub, BorderLayout.SOUTH);
