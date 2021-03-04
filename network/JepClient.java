@@ -26,7 +26,7 @@ public class JepClient implements Runnable{
     public synchronized void run(){
         try{
             while(true){
-                //do the shit--probably updateScores and whatnot
+                //do things
                 if(debug)System.out.println("run");
                 Thread.sleep(sleepTime);
             }

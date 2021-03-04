@@ -278,5 +278,3 @@ public class JepServer implements Runnable{
         }
     }
 }
-
-// "We should have called it 'Trivial Pursuit.' I bet these motherfuckers would know how to spell THAT."
