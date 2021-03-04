@@ -88,10 +88,10 @@ public class JepordyPlayer extends JFrame {
 
 		//New button
 		button1 = new JButton("Quiz Master"); //New button 1
-		button1.setBackground(Color.PINK);
+		button1.setBackground(Color.BLUE);
 		button1.setForeground(Color.BLACK);
 		button2 = new JButton("Player");
-		button2.setBackground(Color.MAGENTA);
+		button2.setBackground(Color.RED);
 		button2.setForeground(Color.BLACK);
 		//button3 = new JButton("IP Address");
 		//button3.setBackground(Color.BLACK);
@@ -138,7 +138,7 @@ public class JepordyPlayer extends JFrame {
 		Intro.setBackground(Color.CYAN);
 	}
 
-
+	//Action Listener for QuizMaster Button
 	private class SimpleListener implements ActionListener{
 
 		@Override
@@ -443,6 +443,7 @@ public class JepordyPlayer extends JFrame {
 			}
 		}
 	}
+	//Listener for world Answers
 	private class Answers implements ActionListener{
 
 		@Override
@@ -456,17 +457,7 @@ public class JepordyPlayer extends JFrame {
 		
 	}
 	}
-//	private class An implements ActionListener{
-//
-//		@Override
-//		public void actionPerformed(ActionEvent e) {
-//			String buttonName = e.getActionCommand();
-//			if(buttonName.equals("Submit")) {
-//			An.setText(Input);
-//		}
-//		
-//	}
-//	}
+	//People Answers
 private class An implements ActionListener{
 
 	@Override
@@ -479,26 +470,26 @@ private class An implements ActionListener{
 	}
 	
 }
-
+//Planets Answers
 private class An2 implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Quest2 = Ans2.getText();
-		client.sendAnswer(Quest);
+		client.sendAnswer(Quest2);
 		Ans2.setText(Quest2);
 		System.out.println(client.sendAnswer(Quest2));
 		System.out.println("haewfowe");
 	}
 	
 }
-
+//Animals Answers
 private class An3 implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Quest3 = Ans3.getText();
-		client.sendAnswer(Quest);
+		client.sendAnswer(Quest3);
 		Ans3.setText(Quest3);
 		System.out.println(client.sendAnswer(Quest3));
 		System.out.println("haewfowe");
@@ -1170,7 +1161,7 @@ private void Animals4() {
 
 	private static void createAndShowGUI() {
 		//Create and set up the window.
-		JepordyPlayer frame = new JepordyPlayer("GridLayoutDemo");
+		JepordyPlayer frame = new JepordyPlayer("Opening Screen");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//Set up the content pane.
 		frame.addComponentsToPane(frame.getContentPane());
@@ -1299,22 +1290,9 @@ private void Animals4() {
         A200.addActionListener(Question);
         A300.addActionListener(Question);
         A400.addActionListener(Question);
-		//JPanel to make board
-		Score = new JLabel("Score: ");
-		Score1 = new JLabel("Score: ");
-		Score2 = new JLabel("Score: ");
-		JPanel Scoredisplay = new JPanel();
-		Scoredisplay.add(Score);
-		Scoredisplay.add(Score1);
-		Scoredisplay.add(Score2);
 		JPanel Master = new JPanel();
 		JPanel Master2 = new JPanel();
 		GridLayout Game = new GridLayout(0,4);
-		GridLayout score = new GridLayout(0,3);
-		Scoredisplay.setLayout(score);
-		Score.setText("Player1: " + score1);
-		Score1.setText("Player2: " + score2);
-		Score2.setText("Player3: " + score3);
 		Master.setLayout(Game);
 		Master2.setLayout(Game);
 		Master.add(World);
@@ -1340,7 +1318,6 @@ private void Animals4() {
 		JFrame quiz = new JFrame("Player" );
 		quiz.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//Display the window for the player side of the frame
-		quiz.add(Scoredisplay, BorderLayout.SOUTH);
 		quiz.add(Master, BorderLayout.NORTH);
 		quiz.add(Master2, BorderLayout.CENTER);
 		quiz.pack();
@@ -1374,6 +1351,19 @@ private void Animals4() {
 		AnswerA = new JButton("Animals Answers");
 		AnswerA.setBackground(Color.CYAN);
 		AnswerA.setForeground(Color.BLACK);
+		//JPanel to make board
+		Score = new JLabel("Score: ");
+		Score1 = new JLabel("Score: ");
+		Score2 = new JLabel("Score: ");
+		JPanel Scoredisplay = new JPanel();
+		Scoredisplay.add(Score);
+		Scoredisplay.add(Score1);
+		Scoredisplay.add(Score2);
+		GridLayout score = new GridLayout(0,3);
+		Scoredisplay.setLayout(score);
+		Score.setText("Player1: " + score1);
+		Score1.setText("Player2: " + score2);
+		Score2.setText("Player3: " + score3);
 		//Button on JPanel
 		A.add(AnswerW);
 		A.add(AnswerP);
@@ -1390,8 +1380,9 @@ private void Animals4() {
 		SimpleListenerWrong wrong = new SimpleListenerWrong();
 		Wrong.addActionListener(wrong);
 		//Display the window.
-		Quiz.add(B, BorderLayout.CENTER);
-		Quiz.add(A, BorderLayout.SOUTH);
+		Quiz.add(B, BorderLayout.NORTH);
+		Quiz.add(A, BorderLayout.CENTER);
+		Quiz.add(Scoredisplay, BorderLayout.SOUTH);
 		Quiz.pack();
 		Quiz.setVisible(true);  
 
