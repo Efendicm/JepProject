@@ -18,6 +18,7 @@ public class JepServer implements Runnable{
     private NetPlayer[] players;
     private String[][] board;
     private int[] buzz;//[row,column] of buzzed question (y,x)
+    private String ans="";
 
     public JepServer(){
         players=new NetPlayer[PLAYERS];
@@ -27,7 +28,7 @@ public class JepServer implements Runnable{
 
     public synchronized void run(){
         try{
-            ss=new ServerSocket(80);
+            ss=new ServerSocket(8080);
             while(true){
                 if(debug)System.out.println("waiting for connection:");
                 s=ss.accept();
@@ -117,6 +118,9 @@ public class JepServer implements Runnable{
             }
         }
     }
+    public String getAnswer(){
+        return ans;
+    }
     public boolean gameFull(){
         boolean out=true;
         for(NetPlayer p:players){
@@ -161,6 +165,7 @@ public class JepServer implements Runnable{
                     case "quitgame":out.write(quitGame(connection));break;
                     case "buzz":out.write(setBuzz(args.nextToken(),args.nextToken()));break;
                     case "getboard":out.write(getBoard(args.nextToken(),args.nextToken()));break;
+                    case "ans":out.write(setAns(args.nextToken()));break;
                     default:out.write("err:unknowncmd");if(debug)System.out.println("error:unknown command:"+received);break;
                 }
 
@@ -266,6 +271,10 @@ public class JepServer implements Runnable{
             }
             if(debug)System.out.println("sent:"+out);
             return out;
+        }
+        private String setAns(String answer){
+            ans=answer;
+            return "ok";
         }
     }
 }
